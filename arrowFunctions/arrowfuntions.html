@@ -5,6 +5,50 @@
     <title>Arrow functions tutorial</title>
   </head>
   <body>
-    
+    <script>
+      //ARROW FUNCTIONS INTRO
+      // Arrow functions are new to ES6. They are more concise, they have implicit returns,
+      // and they don't rebind value when using a arrow funtion in another function.
+      // => is called a "fat arrow"
+      // Arrow functions are always anonymous functions. They cannot be names functions.
+      // but you can put them into a variable.
+      // Does not give good stack traces.
+
+
+      // const names = ['jed', 'turtle pants', 'magoo'];
+      //
+      // const fullNames = names.map(function(name) {
+      //   return `${name} bertram`;
+      // });
+      //
+      // const fullNames2 = names.map((name) => {
+      //   return `${name} bertram`;
+      // });
+      // //Implicit return example
+      // const fullNames3 = names.map((name) => `${name} bertram`);
+      //
+      // //If you have no arguments empty parenthesis need to be passed in
+      // const fullNames4 = names.map(() => `hello bertram`);
+      //
+      // const sayMyName =  (name => { alert(`Hello ${name}`)})
+      //
+      // sayMyName('Heisenberg');
+      //
+      // console.log(fullNames4);
+
+      //MORE ARROW FUNCTION EXAMPLES
+      // If you want to implicitly return am object from a arrow function you must
+      // wrap the curly braces content in parenthesis
+
+      const race = "100m dash"
+      const winners = ['Hunter Gath','Tim Bilbobaggins', 'Peg Legged Pete']
+
+      const win = winners.map((winner, i) => ({name: winner, race, place : i + 1}))
+
+      const ages = [23,45,78,22,65,2,40,21,11,16];
+      const old = ages.filter(age => age >= 60);
+
+      console.log(old);
+    </script>
   </body>
 </html>
