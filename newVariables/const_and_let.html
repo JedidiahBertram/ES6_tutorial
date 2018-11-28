@@ -6,7 +6,21 @@
   </head>
   <body>
     <script type="text/javascript">
+      //replcing the iffie
+      //LET can help replace the iife because of block scope.
+      {
+        const name = 'wes';
+        console.log(name);
+      }
 
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+        setTimeout(function(){
+          console.log('The number is '+ i);
+        }, 1000)
+      }
+
+      
     </script>
   </body>
 </html>
