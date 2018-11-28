@@ -6,21 +6,29 @@
   </head>
   <body>
     <script type="text/javascript">
+
       //replcing the iffie
       //LET can help replace the iife because of block scope.
-      {
-        const name = 'wes';
-        console.log(name);
-      }
 
-      for (let i = 0; i < 10; i++) {
-        console.log(i);
-        setTimeout(function(){
-          console.log('The number is '+ i);
-        }, 1000)
-      }
+      // {
+      //   const name = 'wes';
+      //   console.log(name);
+      // }
+      //
+      // for (let i = 0; i < 10; i++) {
+      //   console.log(i);
+      //   setTimeout(function(){
+      //     console.log('The number is '+ i);
+      //   }, 1000)
+      // }
 
-      
+      //Temporal dead zone
+      // Temporal dead zone is basically the concept of not being able to access a variable before it is defined.
+      // The following console log will throw an error because pizza is defined after the console log.
+
+      // console.log(pizza);
+      // let pizza = 'deep dish';
+
     </script>
   </body>
 </html>
