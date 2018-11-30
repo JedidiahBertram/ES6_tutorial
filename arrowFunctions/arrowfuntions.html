@@ -40,15 +40,115 @@
       // If you want to implicitly return am object from a arrow function you must
       // wrap the curly braces content in parenthesis
 
-      const race = "100m dash"
-      const winners = ['Hunter Gath','Tim Bilbobaggins', 'Peg Legged Pete']
+      // const race = "100m dash"
+      // const winners = ['Hunter Gath','Tim Bilbobaggins', 'Peg Legged Pete']
+      //
+      // const win = winners.map((winner, i) => ({name: winner, race, place : i + 1}))
+      //
+      // const ages = [23,45,78,22,65,2,40,21,11,16];
+      // const old = ages.filter(age => age >= 60);
+      //
+      // console.log(old);
 
-      const win = winners.map((winner, i) => ({name: winner, race, place : i + 1}))
 
-      const ages = [23,45,78,22,65,2,40,21,11,16];
-      const old = ages.filter(age => age >= 60);
-
-      console.log(old);
     </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body>
+
+  <style>
+    .wrap {
+      min-height: 100vh;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      font-weight: 100;
+      color:white;
+    }
+    .box {
+      background:black url(https://unsplash.it/1500/1500?image=560&blur=0.5) center fixed no-repeat;
+      width:50px;
+      height:50px;
+      padding:50px;
+      transition: width 0.2s, height 0.6s;
+      position: relative;
+    }
+    .box.opening {
+      width:500px;
+      height:500px;
+    }
+    .box h2 {
+      position: absolute;
+      width:100%;
+      font-size: 100px;
+      transform:translateX(-200%);
+      transition: all 0.5s;
+      top:0;
+    }
+    .box p {
+      position: absolute;
+      width:100%;
+      transform:translateX(200%);
+      transition: all 0.5s;
+      bottom:0;
+    }
+    .box.open > * {
+      transform:translateX(0%);
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="box">
+      <h2>Wes Bos</h2>
+      <p class="social">@wesbos</p>
+    </div>
+  </div>
+
+<!-- Arrow funtions are not good to use when trying to target items on the DOM, as the this key work inside an arrow function will reference
+the parent scope of what ever element 'this' is referring to. So if we tried to target the  box with an arrow function it would target
+the window. Use a regular funtion for these cases. HOWEVER, you can use the arrow functions within a normal function to reference the same, new parent scope
+instead of typing out a var that = this to get a normal function to reference it. It's neat! This is an example of that!  -->
+
+  <script>
+
+  const box = document.querySelector('.box');
+  box.addEventListener('click', function() {
+    let first = 'opening';
+    let second = 'open';
+
+    if(this.classList.contains(first)) {
+      [first, second] = [second, first]
+    }
+
+    this.classList.toggle(first);
+    setTimeout(() => {
+      console.log(this);
+      this.classList.toggle(second);
+    }, 500);
+  });
+
+  </script>
+
+</body>
+</html>
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
   </body>
 </html>
