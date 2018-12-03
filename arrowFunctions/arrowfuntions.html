@@ -50,10 +50,23 @@
       //
       // console.log(old);
 
+      // **** DEFAULT FUNCTION ARGUMENTS ****
+      // Default values can be set, and will be overritten by anything passed in. If you want to
+      //pass in a value for the third value but not the second, you must pass in undefined for the
+      //second spot, not leave it empty.
+      // function calculateBill(total, tax = 0.13, tip = 0.15){
+      //   return total + (total * tax) + (total * tip);
+      // }
+      //
+      // const totalBill = calculateBill(100, undefined, 0.25);
+      // console.log(totalBill)
 
+      
     </script>
+<!-- **** ARROW FUNCITONS DOM TARGETING / `THIS` EXAMPLE **** -->
 
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -110,12 +123,12 @@
     </div>
   </div>
 
-<!-- Arrow funtions are not good to use when trying to target items on the DOM, as the this key work inside an arrow function will reference
+<!- Arrow funtions are not good to use when trying to target items on the DOM, as the this key work inside an arrow function will reference
 the parent scope of what ever element 'this' is referring to. So if we tried to target the  box with an arrow function it would target
 the window. Use a regular funtion for these cases. HOWEVER, you can use the arrow functions within a normal function to reference the same, new parent scope
 instead of typing out a var that = this to get a normal function to reference it. It's neat! This is an example of that!  -->
 
-  <script>
+  <!-- <script>
 
   const box = document.querySelector('.box');
   box.addEventListener('click', function() {
@@ -136,19 +149,6 @@ instead of typing out a var that = this to get a normal function to reference it
   </script>
 
 </body>
-</html>
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Press h to open a hovercard with more details.
+</html> -->
   </body>
 </html>
