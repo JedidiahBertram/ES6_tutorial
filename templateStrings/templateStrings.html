@@ -6,11 +6,49 @@
   </head>
   <body>
     <script>
-      const name = 'Snickers';
-      const age = 2;
-      // const sentence = 'My Dog ' + name + ' is ' + age * 7 + ' years old.';
-        const sentence = `My Dog ${name} is ${age * 7} years old.`;
-        console.log(sentence);
+      // const name = 'Snickers';
+      // const age = 2;
+      // // const sentence = 'My Dog ' + name + ' is ' + age * 7 + ' years old.';
+      //   const sentence = `My Dog ${name} is ${age * 7} years old.`;
+      //   console.log(sentence);
+
+     //  const person = {
+     //    name: 'Jed',
+     //    job: 'Web Developer',
+     //    city: 'Denver',
+     //    bio: 'Jed is a tall, blonde fair skinned man that loves his job, working out, drums, and is very happy right now.',
+     //  }
+     // //ES6 template strings allow for inline css to be created with ease rather than specifiying that you want to create something new.
+     //  const markup = `
+     //  <div class = "person">
+     //  <span class="job">${person.job}</span>
+     //  <h2>${person.name}
+     //  </h2>
+     //  <p class="location">${person.city}</p>
+     //  <p class="bio">${person.bio}</p>
+     //  </div>
+     // `;
+     //
+     // console.log(markup);
+     //
+     // document.body.innerHTML = markup;
+
+     //Nesting template Strings
+
+    const dogs = [
+      { name: 'Flapjack', age: 2 },
+      { name: 'Daisy', age: 10 },
+      { name: 'Junior', age: 9 },
+    ];
+
+    const markup = `
+    <ul class = "dogs">
+      ${dogs.map(dog => `<li>${dog.name} is ${dog.age * 7}</li>`)}
+    </ul>
+    `;
+
+    console.log(markup);
+
     </script>
   </body>
 </html>
